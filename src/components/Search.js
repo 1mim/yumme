@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Thumbnails from './Thumbnails';
 
 const Search = () => {
 
@@ -13,9 +14,9 @@ const Search = () => {
             let result = await fetch(url);
             result = await result.json();
 
-            console.log(result.meals)
+            // console.log(result.meals)
 
-            // setRecipes(result.data) 
+            setRecipes(result.meals) 
 
         }
         catch (err) {
@@ -31,7 +32,10 @@ const Search = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        getRecipe(input)
+        getRecipe()
+            
+        // return <h2>results</h2> 
+
     }
     
 
@@ -40,9 +44,17 @@ const Search = () => {
             <form onSubmit={handleSubmit}>
                 <input type='text' value={input} placeholder='Search Recipes' onChange={handleChange}></input>
             </form>
-
-            <h2>results</h2>
-
+            {/* <h2>results</h2> */}
+            <div className='recipes-display'>
+                {recipes !== [] &&
+                    recipes.map(recipe => 
+                        <Thumbnails
+                            key={recipe.idMeal}
+                            img={recipe.strMealThumb}
+                            name={recipe.strMeal}
+                            cuisine={recipe.strArea} />
+                    )}
+            </div>
         </div>
     )
 }

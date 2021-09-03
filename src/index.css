@@ -65,22 +65,22 @@ code {
   width: 10rem;
 }
 
-.booklist {
+.recipes-display {
   width: 90vw;
-  max-width: 1170px;
+  /* max-width: 1170px; */
   display: grid;
   margin: 5rem auto;
   gap: 2rem;
 }
 
 @media screen and (min-width: 768px) {
-  .booklist {
-    grid-template-columns: repeat(3, 1fr);
+  .recipes-display {
+    grid-template-columns: repeat(4, 1fr);
     align-items: start;
   }
 }
 
-.book {
+.recipe-thumbnail {
   background: #fff;
   border-radius: 1rem;
   padding: 1rem 2rem;
