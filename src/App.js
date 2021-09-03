@@ -4,6 +4,7 @@ import './index.css'
 import Navbar from './components/Navbar';
 import Search from "./components/Search";
 import Footer from './components/Footer';
+import Featured from './components/Featured';
 
 
 
@@ -13,7 +14,9 @@ function App() {
     <div className="App">
       <header><Navbar /></header>
       <main>
-        <Search />
+        {/* <Search /> */}
+
+        <Featured />
       </main>
       <footer><Footer /></footer>
     </div>
