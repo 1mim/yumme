@@ -33,7 +33,7 @@ const Search = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         getRecipe()
-            
+        setInput("")    
         // return <h2>results</h2> 
 
     }
@@ -42,7 +42,9 @@ const Search = () => {
     return (
         <div className="App">
             <form onSubmit={handleSubmit}>
-                <input type='text' value={input} placeholder='Search Recipes' onChange={handleChange}></input>
+                
+                    <input className="border border-transparent rounded-sm focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent ..."
+                        type='text' value={input} placeholder='Search Recipes' onChange={handleChange}></input>
             </form>
             {/* <h2>results</h2> */}
             <div className='recipes-display'>

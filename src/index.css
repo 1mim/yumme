@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
@@ -65,9 +69,9 @@ code {
   width: 10rem;
 }
 
-.recipes-display {
+/* .recipes-display {
   width: 90vw;
-  /* max-width: 1170px; */
+  max-width: 1170px;
   display: grid;
   margin: 5rem auto;
   gap: 2rem;
@@ -76,6 +80,7 @@ code {
 @media screen and (min-width: 768px) {
   .recipes-display {
     grid-template-columns: repeat(4, 1fr);
+    
     align-items: start;
   }
 }
@@ -84,4 +89,4 @@ code {
   background: #fff;
   border-radius: 1rem;
   padding: 1rem 2rem;
-}
+} */
