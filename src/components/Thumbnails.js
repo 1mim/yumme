@@ -1,17 +1,15 @@
 import React from 'react'
 
-const Thumbnails = ({ img, name, cuisine }) => {
+const Thumbnails = ({ img, name, category }) => {
 
 
     return (
-        <div className="inline-grid grid-flow-col auto-cols-max grid-cols-4 gap-x-4 gap-y-4">
-            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-xl">
+            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-xl ">
                 <img src={img} alt=""/>
 
-                <h3>{name}</h3>
-                <p>cuisine: {cuisine}</p>
+                <h3 className="p-2 text-xl font-black leading-6 ">{name}</h3>
+                <p className="p-2 align-text-bottom font-sans text-xs uppercase text-red-300"><span className="font-semibold">category:</span> {category}</p>
 
-            </div>
             
         </div>
     )

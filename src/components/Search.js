@@ -20,8 +20,8 @@ const Search = () => {
 
         }
         catch (err) {
-        return (<p>No results found.
-                Try browsing our latest collection.</p>)
+        setRecipes('No results found')
+        // alert("Please fill the form");
         }
       }
     
@@ -43,19 +43,19 @@ const Search = () => {
         <div className="App">
             <form onSubmit={handleSubmit}>
                 
-                    <input className="border border-transparent rounded-sm focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent ..."
+                    <input className="w-1/2 h-14 m-7 p-4 border border-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-purple-100 focus:border-transparent"
                         type='text' value={input} placeholder='Search Recipes' onChange={handleChange}></input>
             </form>
             {/* <h2>results</h2> */}
-            <div className='recipes-display'>
+            <div className="inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mt-8">
                 {recipes !== [] &&
                     recipes.map(recipe => 
                         <Thumbnails
                             key={recipe.idMeal}
                             img={recipe.strMealThumb}
                             name={recipe.strMeal}
-                            cuisine={recipe.strArea} />
-                    )}
+                            category={recipe.strCategory} />
+                    )} 
             </div>
         </div>
     )
