@@ -2,7 +2,10 @@ import './App.css';
 import './index.css'
 
 import Navbar from './components/Navbar';
-import Search from "./components/Search"
+import Search from "./components/Search";
+import Footer from './components/Footer';
+
+
 
 function App() {
 
@@ -11,7 +14,8 @@ function App() {
       <header><Navbar /></header>
       <main>
         <Search />
-        </main>
+      </main>
+      <footer><Footer /></footer>
     </div>
   );
 }
