@@ -8,7 +8,7 @@ const Thumbnails = ({ img, name, category }) => {
                 <img src={img} alt=""/>
 
                 <h3 className="p-2 text-xl font-black leading-6 ">{name}</h3>
-                <p className="p-2 align-text-bottom font-sans text-xs uppercase text-red-300"><span className="font-semibold">category:</span> {category}</p>
+            <p className="p-2 static bottom-0 font-sans text-xs uppercase text-red-300"><span className="font-semibold">category:</span> {category}</p>
 
             
         </div>

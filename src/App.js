@@ -18,7 +18,7 @@ function App() {
 
         <Featured />
       </main>
-      <footer><Footer /></footer>
+      <footer className="static "><Footer /></footer>
     </div>
   );
 }
