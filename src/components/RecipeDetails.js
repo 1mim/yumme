@@ -19,8 +19,7 @@ const RecipeDetails = ({ match }) => {
 
         }
         catch (err) {
-        setRecipe('No results found')
-        // alert("Please fill the form");
+            console.error(err.message)
         }
     }
     
@@ -38,7 +37,7 @@ const RecipeDetails = ({ match }) => {
                 {/* <img className="object-none object-left-top" src={recipe.strMealThumb} alt={recipe.strMeal} /> */}
             </div>
             <div className="text-left pr-24 mt-32 mb-16">
-                <h2 className="capitalize leading-tight">{recipe.strMeal}</h2>
+                <h2 className="capitalize text-5xl leading-tight">{recipe.strMeal}</h2>
                 <br/>
                 <div class="grid grid-cols-2 divide-x divide-red-300 w-48 text-xs font-sans">
                     <div>
@@ -57,7 +56,7 @@ const RecipeDetails = ({ match }) => {
                 </div>
                 
                 <br />
-                <p className="text-sm font-sans font-bold">Ingredients</p>
+                <p className="text-sm font-sans font-bold text-pink">Ingredients</p>
                 <ul className="text-sm font-sans pr-24 list-none leading-6">
                     <li>{recipe.strMeasure1} {recipe.strIngredient1}</li>
                     <li>{recipe.strMeasure2} {recipe.strIngredient2}</li>
@@ -83,7 +82,7 @@ const RecipeDetails = ({ match }) => {
                 </ul>
                 
                 <br />
-                <p className="text-sm font-sans font-bold">Intructions</p>
+                <p className="text-sm font-sans font-bold text-pink">Intructions</p>
                 <p className="text-sm font-sans">{recipe.strInstructions}</p>
                 </div>
         </div>

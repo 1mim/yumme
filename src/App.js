@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 import Navbar from './components/Navbar';
-// import Search from "./components/Search";
+import Search from "./components/Search";
 import Footer from './components/Footer';
 import Featured from './components/Featured';
 import RecipeDetails from './components/RecipeDetails';
@@ -20,15 +20,11 @@ function App() {
       <main>
         {/* <Search /> */}
 
-          {/* <Featured /> */}
-          {/* <RecipeDetails /> */}
           
           <Switch>
-            <Route path="/feature" exact component={Featured} />
+            <Route path="/search" exact component={Search} />
+            {/* <Route path="/feature" exact component={Featured} /> */}
             <Route path="/recipe/:id" exact component={RecipeDetails}/>
-            {/* <Route exact path="/recipe">
-            <RecipeDetails />
-            </Route> */}
           </Switch>
 
       </main>

@@ -16,7 +16,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #F8F3F2;
-  color: #555; 
+  color: rgb(71, 70, 70); 
 }
 
 h2 {
@@ -25,7 +25,9 @@ h2 {
   font-size: 2rem;
 }
 
-
+.center {
+  text-align: center;
+}
 
 .navbar {
   background-color: #C89F9C;
