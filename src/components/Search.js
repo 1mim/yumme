@@ -55,14 +55,14 @@ const Search = () => {
 
     return (
         <div className="App mt-16">
+            <h2 className="text-6xl pt-10 pb-5">Our Recipes</h2>
             <form onSubmit={handleSubmit}>
-                
                     {/* <input className="w-1/2 h-14 m-7 p-4 border border-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-purple-100 focus:border-transparent" */}
                     <input className="w-1/3 h-14 m-7 p-4 bg-transparent border-b-2 border-gray-500 focus-within:text-gray-600 outline-none "
                     type='text' value={input} placeholder='Search Recipes' onChange={handleChange}></input>
             </form>
             {/* {!loading && error && <h2>{error}</h2>} */}
-            {/* {loading && <div className="center"><Loader type="Hearts" color="#EED7C5" height={80} width={80} /></div>} */}
+
             {loading && <div className="center"><Ripple color="#EED7C5" size={80} /></div>}
             {recipes.length} results found
             <div className="inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mt-8 ">       
