@@ -3,10 +3,11 @@ import React from 'react';
 const Thumbnails = ({ img, name, category }) => {
 
     return (
-            <div className="relative max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-xl ">
+            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-xl ">
                 <img src={img} alt=""/>
                 <h3 className="p-2 text-xl font-black leading-6 ">{name}</h3>
-                <p className="sticky bottom-0 object-bottom align-baseline p-2 mx-2 font-sans text-xs uppercase text-red-300 border-t border-dotted "><span className="font-semibold">category:</span> {category}</p>
+                {/* <p className="sticky bottom-0 object-bottom align-baseline p-2 mx-2 font-sans text-xs uppercase text-red-300 border-t border-dotted "><span className="font-semibold">category:</span> {category}</p> */}
+                <p className="p-2 mx-2 font-sans text-xs uppercase text-red-300 border-t border-dotted "><span className="font-semibold">category:</span> {category}</p>
         </div>
     )
 }

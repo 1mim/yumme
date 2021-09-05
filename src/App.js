@@ -25,7 +25,7 @@ function App() {
           
           <Switch>
             <Route path="/feature" exact component={Featured} />
-            <Route path="/recipe" exact component={RecipeDetails}/>
+            <Route path="/recipe/:id" exact component={RecipeDetails}/>
             {/* <Route exact path="/recipe">
             <RecipeDetails />
             </Route> */}
