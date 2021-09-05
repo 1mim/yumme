@@ -31,15 +31,16 @@ const RecipeDetails = ({ match }) => {
 
 
     return (
-        <div className="grid grid-cols-2 grid-flow-col space-x-14">
+
+        <div className="grid grid-cols-2 grid-flow-col space-x-28 bg-fixed bg-no-repeat " style={{backgroundImage:`url(${recipe.strMealThumb})`}}>
             <div className="">
                 {/* for Image */}
-                <img src={recipe.strMealThumb} alt={recipe.strMeal}/>
+                {/* <img className="object-none object-left-top" src={recipe.strMealThumb} alt={recipe.strMeal} /> */}
             </div>
-            <div className="text-left">
-                <h2 className="capitalize mt-16">{recipe.strMeal}</h2>
+            <div className="text-left pr-24 mt-32 mb-16">
+                <h2 className="capitalize leading-tight">{recipe.strMeal}</h2>
                 <br/>
-                <div class="grid grid-cols-2 divide-x divide-gray-500 w-60 text-xs font-sans">
+                <div class="grid grid-cols-2 divide-x divide-red-300 w-48 text-xs font-sans">
                     <div>
                         <ul>
                             <li className="font-bold">Category</li>
@@ -47,7 +48,7 @@ const RecipeDetails = ({ match }) => {
                         </ul>
                     </div>
                     <div>
-                        <ul className="pl-3">
+                        <ul className="pl-6">
                             <li className="font-bold">Cuisine</li>
                             <li>{recipe.strArea}</li>
                         </ul>
@@ -83,7 +84,7 @@ const RecipeDetails = ({ match }) => {
                 
                 <br />
                 <p className="text-sm font-sans font-bold">Intructions</p>
-                <p className="text-sm font-sans pr-24">{recipe.strInstructions}</p>
+                <p className="text-sm font-sans">{recipe.strInstructions}</p>
                 </div>
         </div>
     )
