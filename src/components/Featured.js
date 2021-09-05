@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Thumbnails from './Thumbnails';
+import { Link } from 'react-router-dom'
 
 const Featured = () => {
     const [recipes, setRecipes] = useState([])
@@ -33,16 +34,19 @@ const Featured = () => {
             {/* <h2>results</h2> */}
             <div className="inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mb-8 mt-8">
                 {recipes !== [] &&
-                    recipes.map(recipe => 
-                        <Thumbnails
+                    recipes.map(recipe =>
+                      
+                        <Link to={`/recipe/${recipe.idMeal}`}>
+                         <Thumbnails
                             key={recipe.idMeal}
                             img={recipe.strMealThumb}
                             name={recipe.strMeal}
                             category={recipe.strCategory} />
+                        </Link>
                     ).slice(6)} 
             </div>
-            <div>
-                <buton className="bg-gray-200 hover:bg-red-300 p-2.5">View more</buton>
+            <div className="my-10 mt-5">
+                <buton className="box-border border-black h-32 w-40 p-4 border-2 hover:border-red-300 ">View more</buton>
             </div>
         </div>
     )
