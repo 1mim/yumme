@@ -31,7 +31,8 @@ const RecipeDetails = ({ match }) => {
 
     return (
 
-        <div className="grid grid-cols-2 grid-flow-col space-x-28 bg-fixed bg-no-repeat " style={{backgroundImage:`url(${recipe.strMealThumb})`}}>
+        <div className="grid grid-cols-2 grid-flow-col space-x-28 bg-fixed bg-no-repeat" style={{backgroundImage:`url(${recipe.strMealThumb})`}}>
+           
             <div className="">
                 {/* for Image */}
                 {/* <img className="object-none object-left-top" src={recipe.strMealThumb} alt={recipe.strMeal} /> */}

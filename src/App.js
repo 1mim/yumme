@@ -28,7 +28,7 @@ function App() {
           </Switch>
 
       </main>
-      <footer className="static "><Footer /></footer>
+      <footer className="fixed bottom-0"><Footer /></footer>
       </div>
       </Router>
   );
