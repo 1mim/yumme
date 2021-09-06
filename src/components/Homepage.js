@@ -1,12 +1,14 @@
-import React from 'react'
+import React from 'react';
+import LandingPage from './LandingPage';
+import Featured from './Featured';
 
 const Homepage = () => {
     return (
         <div>
-            <p>Landing page with search bar.</p>
-            <p>featured component</p>
-            <p>placeholder: sign up to our newsletter</p>
-            <p>browse by categories</p>
+            <LandingPage />
+            <Featured />
+            {/* <p>placeholder: sign up to our newsletter</p>
+            <p>browse by categories</p> */}
         </div>
     )
 }

@@ -57,7 +57,7 @@ const RecipeDetails = ({ match }) => {
                 </div>
                 
                 <br />
-                <p className="text-sm font-sans font-bold text-pink">Ingredients</p>
+                <p className="text-sm font-sans font-bold text-red-450">Ingredients</p>
                 <ul className="text-sm font-sans pr-24 list-none leading-6">
                     <li>{recipe.strMeasure1} {recipe.strIngredient1}</li>
                     <li>{recipe.strMeasure2} {recipe.strIngredient2}</li>
@@ -83,7 +83,7 @@ const RecipeDetails = ({ match }) => {
                 </ul>
                 
                 <br />
-                <p className="text-sm font-sans font-bold text-pink">Intructions</p>
+                <p className="text-sm font-sans font-bold text-red-450">Instructions</p>
                 <p className="text-sm font-sans">{recipe.strInstructions}</p>
                 </div>
         </div>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Thumbnails from './Thumbnails';
 import { Link } from 'react-router-dom'
 
-const Featured = () => {
+const FeaturedPage = () => {
     const [recipes, setRecipes] = useState([])
 
     const featRecipe = async() => {
@@ -29,10 +29,10 @@ const Featured = () => {
     }, []);
 
     return (
-        <div className="mt-10">
-            <h2 className="m-3">Featured Recipes</h2>
+        <div className="mt-16">
+            <h2 className="text-5xl pt-10 pb-12">Featured Recipes</h2>
             {/* <h2>results</h2> */}
-            <div className="inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mb-8 mt-8">
+            <div className="inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mb-16 mt-8">
                 {recipes !== [] &&
                     recipes.map(recipe =>
                       
@@ -44,13 +44,10 @@ const Featured = () => {
                             category={recipe.strCategory}
                             cuisine={recipe.strArea}/>
                         </Link>
-                    ).slice(6)} 
-            </div>
-            <div className="my-10 mt-5">
-            <Link to='/featured'><buton className = "py-4 px-8 font-bold bg-transparent border-2 border-gray-600 focus-within:text-gray-600 outline-none hover:bg-gray-600 hover:text-white"> View more </buton></Link>
+                    )} 
             </div>
         </div>
     )
 }
 
-export default Featured
+export default FeaturedPage
