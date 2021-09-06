@@ -13,6 +13,7 @@ const Search = () => {
     const [recipes, setRecipes] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+    // const [total, setTotal] = useState('');
 
     const getRecipe = async () => {
         
@@ -26,13 +27,14 @@ const Search = () => {
             let result = await fetch(url);
             result = await result.json();
             
-            setRecipes(result.meals) 
+            setRecipes(result.meals)
 
         }
         catch (err) {
             // console.error(err.message)
-            // setError(`${recipes.length} results found`);
+
             setError(err.message);
+            // setError(err.result.data.errors);
         }
         setLoading(false)
       }
@@ -45,7 +47,8 @@ const Search = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         getRecipe()
-        setInput("")    
+        setInput("")
+        // setTotal(recipes.length)
 
 
     }
@@ -60,13 +63,14 @@ const Search = () => {
                     type='text' value={input} placeholder='a search away' onChange={handleChange}></input>
             </form>
 
-            {loading && error && <h2>{error}</h2>}
+            {error && <h2>{error[0]}</h2>}
             {loading && <div className="center"><Ripple color="#EED7C5" size={80} /></div>}
-            
+    
             {!loading && (
-                <>
-                    <div>{recipes.length} results found</div>
-                <div className="inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mt-8 ">
+                <div>
+                    {/* <p>{total}</p> */}
+                    <p>{recipes.length} results found</p>
+                <div className="inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mt-8">
                     {recipes !== [] &&
                         recipes.map(recipe =>
                         
@@ -79,8 +83,9 @@ const Search = () => {
                                     cuisine={recipe.strArea} />
                             </Link>
                         )}
-                    </div></>)
-                 }
+                    </div>
+
+                </div>)}
 
         </div>
     )
