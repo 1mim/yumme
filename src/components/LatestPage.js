@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Thumbnails from './Thumbnails';
 import { Link } from 'react-router-dom'
 
-const FeaturedPage = () => {
+const LatestPage = () => {
     const [recipes, setRecipes] = useState([])
 
     const featRecipe = async() => {
-        const url = `https://www.themealdb.com/api/json/v2/9973533/randomselection.php`;
+        const url = `https://www.themealdb.com/api/json/v2/9973533/latest.php`;
        
         try {
             console.log("search");
@@ -29,10 +29,10 @@ const FeaturedPage = () => {
     }, []);
 
     return (
-        <div className="mt-16 flex flex-col">
-            <h2 className="text-5xl pt-10 pb-12">Featured Recipes</h2>
+        <div className="mt-16">
+            <h2 className="text-5xl pt-10 pb-12">Latest Recipes</h2>
             {/* <h2>results</h2> */}
-            <div className="inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mb-16 mt-8">
+            <div className="flex flex-wrap flex-col inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mb-16 mt-8">
                 {recipes !== [] &&
                     recipes.map(recipe =>
                       
@@ -50,4 +50,4 @@ const FeaturedPage = () => {
     )
 }
 
-export default FeaturedPage
+export default LatestPage

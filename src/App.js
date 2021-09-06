@@ -6,11 +6,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Search from "./components/Search";
 import Footer from './components/Footer';
-import Featured from './components/Featured';
 import RecipeDetails from './components/RecipeDetails';
-import LandingPage from './components/LandingPage';
 import Homepage from './components/Homepage';
 import FeaturedPage from './components/FeaturedPage';
+import LatestPage from './components/LatestPage';
+import AboutPage from './components/AboutPage';
 
 
 
@@ -28,6 +28,8 @@ function App() {
             <Route path="/" exact component={Homepage} />
             <Route path="/search" exact component={Search} />
             <Route path="/featured" exact component={FeaturedPage} />
+            <Route path="/latest" exact component={LatestPage} />
+            <Route path="/about" exact component={AboutPage} />
             <Route path="/recipe/:id" exact component={RecipeDetails}/>
           </Switch>
 

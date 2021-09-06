@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+
 
 
 const Navbar = () => {
@@ -8,16 +10,16 @@ const Navbar = () => {
             <nav>
             <ul>
             
-                <li><h6>Latest</h6></li>
-                <li><h6>Featured</h6></li>
+                <li><Link to='/latest'><h6>Latest</h6></Link></li>
+                <li><Link to='/featured'><h6>Featured</h6></Link></li>
         
-                <li><h2>yumme.</h2></li>
+                <li><Link to='/'><h2>yumme.</h2></Link></li>
                 
                 <li><h6>Categories</h6></li>
-                <li><h6>About</h6></li>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 pt-2" fill="none" viewBox="0 0 23 23" stroke="currentColor">
+                <li><Link to='/about'><h6>About</h6></Link></li>
+                <Link to='/search'><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 pt-2" fill="none" viewBox="0 0 23 23" stroke="currentColor">
   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-</svg>
+</svg></Link>
                     </ul>
                    
                 </nav>

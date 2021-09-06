@@ -26,16 +26,13 @@ const Search = () => {
             let result = await fetch(url);
             result = await result.json();
             
-            setError('No results found');
-
-            // console.log(result.meals)
-            
             setRecipes(result.meals) 
 
         }
         catch (err) {
-            console.error(err.message)
-            setError(true);
+            // console.error(err.message)
+            // setError(`${recipes.length} results found`);
+            setError(err.message);
         }
         setLoading(false)
       }
@@ -62,24 +59,28 @@ const Search = () => {
                     <input className="w-1/3 h-14 m-7 p-4 bg-transparent border-b-2 border-gray-500 focus-within:text-gray-600 outline-none "
                     type='text' value={input} placeholder='a search away' onChange={handleChange}></input>
             </form>
-            {/* {!loading && error && <h2>{error}</h2>} */}
 
+            {loading && error && <h2>{error}</h2>}
             {loading && <div className="center"><Ripple color="#EED7C5" size={80} /></div>}
-            <div>{recipes.length} results found</div>
-            <div className="inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mt-8 ">       
-                {recipes !== [] &&
-                    recipes.map(recipe =>
+            
+            {!loading && (
+                <>
+                    <div>{recipes.length} results found</div>
+                <div className="inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mt-8 ">
+                    {recipes !== [] &&
+                        recipes.map(recipe =>
                         
-                        <Link to={`/recipe/${recipe.idMeal}`}>
-                        <Thumbnails
-                                key={recipe.idMeal}
-                                img={recipe.strMealThumb}
-                                name={recipe.strMeal}
-                                category={recipe.strCategory}
-                                cuisine={recipe.strArea}/>
-                        </Link>
-                    )} 
-            </div>
+                            <Link to={`/recipe/${recipe.idMeal}`}>
+                                <Thumbnails
+                                    key={recipe.idMeal}
+                                    img={recipe.strMealThumb}
+                                    name={recipe.strMeal}
+                                    category={recipe.strCategory}
+                                    cuisine={recipe.strArea} />
+                            </Link>
+                        )}
+                    </div></>)
+                 }
 
         </div>
     )
