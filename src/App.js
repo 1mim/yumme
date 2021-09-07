@@ -19,7 +19,7 @@ function App() {
   return (
     <Router>
     <div className="App">
-      <header className="sticky"><Navbar /></header>
+      <header className=""><Navbar /></header>
       <main>
         {/* <Search /> */}
         {/* <LandingPage /> */}

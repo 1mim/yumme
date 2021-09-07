@@ -33,10 +33,12 @@ h2 {
   background-color: #C89F9C;
   max-height: 25vh;
   padding-bottom: 0.7rem;
-  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  position: sticky;
+  top:0rem;
+  width: 100vw;
   font-size: calc(10px + 2vmin);
   color: white;
   margin-bottom: 0rem;
@@ -81,11 +83,12 @@ footer {
   max-height: 25vh;
   margin-top: 0rem;
   padding: 0.4rem;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   width: 100%;
   align-items: center;
   color: white;
   font-size: 0.8rem;
+  bottom: 0rem;
   
 }

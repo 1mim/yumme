@@ -2,10 +2,8 @@ import React, { useState } from 'react'
 import Thumbnails from './Thumbnails';
 import { Link } from 'react-router-dom';
 
-// import Loader from "react-loader-spinner";
-// import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
-import { Circle, Heart, Ripple } from 'react-spinners-css';
+import { Ripple } from 'react-spinners-css';
 
 const Search = () => {
 
@@ -13,6 +11,7 @@ const Search = () => {
     const [recipes, setRecipes] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [noResults, setNoResults] = useState('No Results Found');
     // const [total, setTotal] = useState('');
 
     const getRecipe = async () => {
@@ -28,14 +27,33 @@ const Search = () => {
             result = await result.json();
             
             setRecipes(result.meals)
+            console.log(result.meals)
 
-        }
-        catch (err) {
-            // console.error(err.message)
+            // if (error) {
+            //     console.log(recipes.length);
 
-            setError(err.message);
-            // setError(err.result.data.errors);
+            // await setError(noResults);
+            // };
+
+            console.log(recipes);
+            console.log('no results here', error);
+            // console.log(noResults);
+            // await setNoResults();
+
+            // if (recipes === []) {
+            //     console.log('noResults');
+
+            // setNoResults("No results found");
+            // };
+
+        } catch (e) {
+            console.log("error at catch")
+
+            // await setError(err.message);
+            await setNoResults("did this catch");
+            
         }
+        
         setLoading(false)
       }
     
@@ -63,7 +81,7 @@ const Search = () => {
                     type='text' value={input} placeholder='a search away' onChange={handleChange}></input>
             </form>
 
-            {error && <h2>{error[0]}</h2>}
+            {recipes === [] && error && <h2> {noResults} </h2>}
             {loading && <div className="center"><Ripple color="#EED7C5" size={80} /></div>}
     
             {!loading && (
