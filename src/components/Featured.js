@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import Thumbnails from './Thumbnails';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
+import { Ripple } from 'react-spinners-css';
 
 const Featured = () => {
     const [recipes, setRecipes] = useState([])
+    const [loading, setLoading] = useState(false);
+    
 
-    const featRecipe = async() => {
+    const featRecipe = async () => {
+        setLoading(true);
         const url = `https://www.themealdb.com/api/json/v2/9973533/randomselection.php`;
        
         try {
@@ -22,6 +27,7 @@ const Featured = () => {
         setRecipes('No results found')
         // alert("Please fill the form");
         }
+        setLoading(false)
     }
     
     useEffect(() => {
@@ -31,7 +37,8 @@ const Featured = () => {
     return (
         <div className="mt-10">
             <h2 className="m-3">Featured Recipes</h2>
-            {/* <h2>results</h2> */}
+            {loading && <div className="center"><Ripple color="#EED7C5" size={80} /></div>}
+        
             <div className="inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mb-8 mt-8">
                 {recipes !== [] &&
                     recipes.map(recipe =>
