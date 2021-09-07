@@ -7,10 +7,13 @@ import { Ripple } from 'react-spinners-css';
 const Featured = () => {
     const [recipes, setRecipes] = useState([])
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
     
 
     const featRecipe = async () => {
+        setError(null);
         setLoading(true);
+
         const url = `https://www.themealdb.com/api/json/v2/9973533/randomselection.php`;
        
         try {
@@ -24,7 +27,8 @@ const Featured = () => {
 
         }
         catch (err) {
-        setRecipes('No results found')
+          setError(err.message
+            )
         // alert("Please fill the form");
         }
         setLoading(false)

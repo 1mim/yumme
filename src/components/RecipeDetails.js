@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
+import { Ripple } from 'react-spinners-css';
+
 const RecipeDetails = ({ match }) => {
 
     const [recipe, setRecipe] = useState({})
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    
 
     const getRecipe = async () => {
+        setError(null);
+        setLoading(true);
         const url = `https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=${match.params.id}`;
        
         try {
@@ -19,8 +26,9 @@ const RecipeDetails = ({ match }) => {
 
         }
         catch (err) {
-            console.error(err.message)
+            setError(err.message)
         }
+        setLoading(false)
     }
     
     useEffect(() => {
@@ -32,10 +40,9 @@ const RecipeDetails = ({ match }) => {
     return (
 
         <div className="grid grid-cols-2 grid-flow-col space-x-28 bg-fixed bg-no-repeat" style={{backgroundImage:`url(${recipe.strMealThumb})`}}>
-           
+           {loading && <div className="center"><Ripple color="#EED7C5" size={80} /></div>}
             <div className="">
                 {/* for Image */}
-                {/* <img className="object-none object-left-top" src={recipe.strMealThumb} alt={recipe.strMeal} /> */}
             </div>
             <div className="text-left pr-24 mt-32 mb-16">
                 <h2 className="capitalize text-5xl leading-tight">{recipe.strMeal}</h2>

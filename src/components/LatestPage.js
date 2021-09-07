@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import Thumbnails from './Thumbnails';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
+import { Ripple } from 'react-spinners-css';
 
 const LatestPage = () => {
     const [recipes, setRecipes] = useState([])
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
-    const featRecipe = async() => {
+    const featRecipe = async () => {
+        setError(null);
+        setLoading(true);
+
         const url = `https://www.themealdb.com/api/json/v2/9973533/latest.php`;
        
         try {
@@ -19,9 +26,11 @@ const LatestPage = () => {
 
         }
         catch (err) {
-        setRecipes('No results found')
+            setError(err.message
+                )
         // alert("Please fill the form");
         }
+        setLoading(false)
     }
     
     useEffect(() => {
@@ -31,7 +40,8 @@ const LatestPage = () => {
     return (
         <div className="mt-16">
             <h2 className="text-5xl pt-10 pb-12">Latest Recipes</h2>
-            {/* <h2>results</h2> */}
+            {loading && <div className="center"><Ripple color="#EED7C5" size={80} /></div>}
+            
             <div className="flex flex-wrap flex-col inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mb-16 mt-8">
                 {recipes !== [] &&
                     recipes.map(recipe =>
