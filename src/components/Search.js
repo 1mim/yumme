@@ -26,25 +26,20 @@ const Search = () => {
             let result = await fetch(url);
             result = await result.json();
             
+            if (result.meals === null) {
+                setRecipes([])
+                setNoResults()
+            } else {
+
             setRecipes(result.meals)
             console.log(result.meals)
-
-            // if (error) {
-            //     console.log(recipes.length);
-
-            // await setError(noResults);
-            // };
+            }   
 
             console.log(recipes);
             console.log('no results here', error);
-            // console.log(noResults);
-            // await setNoResults();
+            console.log(noResults);
+            setNoResults();
 
-            // if (recipes === []) {
-            //     console.log('noResults');
-
-            // setNoResults("No results found");
-            // };
 
         } catch (e) {
             console.log("error at catch")
@@ -73,7 +68,7 @@ const Search = () => {
     
 
     return (
-        <div className="mt-16">
+        <div className="mt-16 h-full">
             <h2 className="text-6xl pt-10 pb-5">yumme recipes</h2>
             <form onSubmit={handleSubmit}>
 
@@ -81,7 +76,7 @@ const Search = () => {
                     type='text' value={input} placeholder='a search away' onChange={handleChange}></input>
             </form>
 
-            {recipes === [] && error && <h2> {noResults} </h2>}
+            {error && recipes.length === 0 && <h2> {noResults} </h2>}
             {loading && <div className="center"><Ripple color="#EED7C5" size={80} /></div>}
     
             {!loading && (

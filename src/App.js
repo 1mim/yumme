@@ -11,6 +11,8 @@ import Homepage from './components/Homepage';
 import FeaturedPage from './components/FeaturedPage';
 import LatestPage from './components/LatestPage';
 import AboutPage from './components/AboutPage';
+import Category from './components/Category';
+import CategoryPage from './components/CategoryPage';
 
 
 
@@ -29,6 +31,7 @@ function App() {
             <Route path="/search" exact component={Search} />
             <Route path="/featured" exact component={FeaturedPage} />
             <Route path="/latest" exact component={LatestPage} />
+            <Route path="/category/:name" exact component={CategoryPage} />
             <Route path="/about" exact component={AboutPage} />
             <Route path="/recipe/:id" exact component={RecipeDetails}/>
           </Switch>

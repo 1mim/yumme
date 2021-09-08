@@ -38,7 +38,7 @@ h2 {
   justify-content: center;
   position: sticky;
   top:0rem;
-  width: 100vw;
+  /* width: 100vw; */
   font-size: calc(10px + 2vmin);
   color: white;
   margin-bottom: 0rem;
