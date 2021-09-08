@@ -43,7 +43,7 @@ const Featured = () => {
             <h2 className="m-3">Featured Recipes</h2>
             {loading && <div className="center"><Ripple color="#EED7C5" size={80} /></div>}
         
-            <div className="inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mb-8 mt-8">
+            <div className="inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mb-8 mt-8 pb-6">
                 {recipes !== [] &&
                     recipes.map(recipe =>
                       
