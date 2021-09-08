@@ -1,6 +1,6 @@
 import './App.css';
 import './index.css'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 
 
 import Navbar from './components/Navbar';
@@ -32,8 +32,8 @@ function App() {
             <Route path="/search" exact component={Search} />
             <Route path="/featured" exact component={FeaturedPage} />
             <Route path="/latest" exact component={LatestPage} />
-            {/* <Route path="/allcategory" exact component={CategoryTab} /> */}
             <Route path="/category/:name" exact component={CategoryTab} />
+            <Route exact path="/category"><Redirect to="/category/Beef"/></Route>
             <Route path="/about" exact component={AboutPage} />
             <Route path="/recipe/:id" exact component={RecipeDetails}/>
           </Switch>
