@@ -11,7 +11,7 @@ const Search = () => {
     const [recipes, setRecipes] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [noResults, setNoResults] = useState('No Results Found');
+    const [noResults, setNoResults] = useState('');
     // const [total, setTotal] = useState('');
 
     const getRecipe = async () => {
@@ -28,7 +28,7 @@ const Search = () => {
             
             if (result.meals === null) {
                 setRecipes([])
-                setNoResults()
+                setNoResults("No results found")
             } else {
 
             setRecipes(result.meals)
@@ -41,11 +41,10 @@ const Search = () => {
             setNoResults();
 
 
-        } catch (e) {
-            console.log("error at catch")
+        } catch (err) {
+            // console.log("error at catch")
 
-            // await setError(err.message);
-            await setNoResults("did this catch");
+            await setError(err.message)
             
         }
         
@@ -69,14 +68,14 @@ const Search = () => {
 
     return (
         <div className="mt-16 h-full">
-            <h2 className="text-6xl pt-10 pb-5">yumme recipes</h2>
+            <h2 className="text-6xl pt-10 pb-14">yumme recipes</h2>
             <form onSubmit={handleSubmit}>
 
                     <input className="w-1/3 h-14 m-7 p-4 bg-transparent border-b-2 border-gray-500 focus-within:text-gray-600 outline-none "
                     type='text' value={input} placeholder='a search away' onChange={handleChange}></input>
             </form>
 
-            {error && recipes.length === 0 && <h2> {noResults} </h2>}
+            {error && recipes.length === 0 && <h2>{noResults}</h2>}
             {loading && <div className="center"><Ripple color="#EED7C5" size={80} /></div>}
     
             {!loading && (

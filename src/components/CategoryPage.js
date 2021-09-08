@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Thumbnails from './Thumbnails';
 import { Link } from 'react-router-dom';
-import Category from './Category';
 
 import { Ripple } from 'react-spinners-css';
 

@@ -40,7 +40,7 @@ const Featured = () => {
 
     return (
         <div className="mt-10">
-            <h2 className="m-3">Featured Recipes</h2>
+            <h2 className="text-4xl pt-6 pb-5">Featured Recipes</h2>
             {loading && <div className="center"><Ripple color="#EED7C5" size={80} /></div>}
         
             <div className="inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mb-8 mt-8 pb-6">
@@ -57,7 +57,7 @@ const Featured = () => {
                         </Link>
                     ).slice(6)} 
             </div>
-            <div className="my-10 mt-5">
+            <div className="my-10 mt-3">
             <Link to='/featured'><buton className = "py-4 px-8 font-bold bg-transparent border-2 border-gray-600 focus-within:text-gray-600 outline-none hover:bg-gray-600 hover:text-white"> View more </buton></Link>
             </div>
         </div>
