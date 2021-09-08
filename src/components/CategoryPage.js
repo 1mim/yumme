@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Thumbnails from './Thumbnails';
 import { Link } from 'react-router-dom';
+import Category from './Category';
 
 import { Ripple } from 'react-spinners-css';
 
@@ -24,7 +25,8 @@ const CategoryPage = ({ match }) => {
             // console.log(result.meals)
             console.log(result.meals)
 
-            setCategories(result.meals) 
+            setCategories(result.meals)
+            console.log(result.meals.strCategory)
 
         }
         catch (err) {
@@ -40,9 +42,10 @@ const CategoryPage = ({ match }) => {
 
     return (
         <div>
-            <h2 className="m-3">{categories.strCategory}</h2>
+            
+            
             {loading && <div className="center"><Ripple color="#EED7C5" size={80} /></div>}
-        
+            <h2 className="m-3">{match.params.name}</h2>
             <div className="inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mb-8 mt-8">
                 {categories !== [] &&
                     categories.map(category =>
