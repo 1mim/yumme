@@ -8,7 +8,7 @@ const Homepage = () => {
         <div>
              {/* <LandingPage />
             <Featured />  */}
-            <Category />
+            <div className="h-48 my-auto p-6"><Category /></div>
             {/* <p>placeholder: sign up to our newsletter</p>
             <p>browse by categories</p> */}
         </div>

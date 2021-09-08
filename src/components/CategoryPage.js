@@ -41,11 +41,10 @@ const CategoryPage = ({ match }) => {
     }, []);
 
     return (
-        <div>
+        <div className="mt-16">
             
-            
-            {loading && <div className="center"><Ripple color="#EED7C5" size={80} /></div>}
             <h2 className="m-3">{match.params.name}</h2>
+            {loading && <div className="center"><Ripple color="#EED7C5" size={80} /></div>}
             <div className="inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mb-8 mt-8">
                 {categories !== [] &&
                     categories.map(category =>

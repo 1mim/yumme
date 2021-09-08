@@ -39,15 +39,17 @@ const Category = () => {
     }, []);
 
     return (
-        <div className="bg-white">
-            <h2>Browse by category</h2>
+        <div className="bg-white shadow-lg grid grid-cols-3 gap-4 w-2/3 p-3 h-38 mx-auto rounded-lg ">
+            <div>
+            <h2 className="border-r-2 border-red-100 min-h-full">Browse by category</h2>
+            </div>
             {loading && <div className="center"><Ripple color="#EED7C5" size={80} /></div>}
-            <React.Fragment>
+            <div className="col-span-2 h-full my-2">
 
             {categories !== [] &&
                     categories.map(category =>
                       
-                       <span> <Link to={`/category/${category.strCategory}`}>
+                       <span className="flex-auto bg-red-350 text-gray-600 hover:bg-red-550 hover:text-white m-2 py-2 px-3 text-white text-xs text-left font-sans leading-10"> <Link to={`/category/${category.strCategory}`}>
                          {/* <Thumbnails
                             // key={recipe.idMeal}
                             // img={recipe.strMealThumb}
@@ -56,10 +58,10 @@ const Category = () => {
                                 // cuisine={recipe.strArea} */}
                                 
                             {/* /> */}
-                            {category.strCategory} 
+                            {category.strCategory}
                         </Link> </span>
                     )} 
-            </React.Fragment>
+            </div>
 
             
         </div>
