@@ -6,11 +6,10 @@ import Category from './Category';
 const Homepage = () => {
     return (
         <div>
-             {/* <LandingPage />
-            <Featured />  */}
-            <div className="h-48 my-auto p-6"><Category /></div>
-            {/* <p>placeholder: sign up to our newsletter</p>
-            <p>browse by categories</p> */}
+            <LandingPage />
+            <Featured />
+            <div className="bg-gray-600 w-full h-full pt-10 pb-10"
+            style={{backgroundImage:`url('https://i.ibb.co/Zgj3KQh/sign-up-news-letter-banner.jpg')`}}><Category /></div>
         </div>
     )
 }
