@@ -92,3 +92,22 @@ footer {
   bottom: 0rem;
   
 }
+
+.aboutImage {
+  left: 270px;
+  position: relative;
+  top: 60px;
+  width: 30%;
+  margin-bottom: 10px;
+}
+
+.aboutContent {
+  left: 575px;
+  position: absolute;
+  top: 210px;
+  background-color: rgb(48, 45, 45, 0.95);
+  color: rgb(238, 236, 236);
+  text-align: left;
+  padding: 1.5rem;
+  width: 400px;
+}

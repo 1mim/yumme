@@ -11,8 +11,6 @@ import Homepage from './components/Homepage';
 import FeaturedPage from './components/FeaturedPage';
 import LatestPage from './components/LatestPage';
 import AboutPage from './components/AboutPage';
-// import Category from './components/Category';
-import CategoryPage from './components/CategoryPage';
 import CategoryTab from './components/CategoryTab';
 
 
@@ -23,10 +21,7 @@ function App() {
     <Router>
     <div className="App">
       <header className=""><Navbar /></header>
-      <main>
-        {/* <Search /> */}
-        {/* <LandingPage /> */}
-          
+      <main>          
           <Switch>
             <Route path="/" exact component={Homepage} />
             <Route path="/search" exact component={Search} />
