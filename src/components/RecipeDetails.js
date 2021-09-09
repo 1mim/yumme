@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Ripple } from 'react-spinners-css';
 
@@ -51,7 +52,7 @@ const RecipeDetails = ({ match }) => {
                     <div>
                         <ul>
                             <li className="font-bold">Category</li>
-                            <li>{recipe.strCategory}</li>
+                            <li><Link to={`/category/${recipe.strCategory}`} className="bg-none hover:text-red-550">{recipe.strCategory}</Link></li>
                         </ul>
                     </div>
                     <div>

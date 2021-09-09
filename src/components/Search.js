@@ -61,9 +61,8 @@ const Search = () => {
         getRecipe()
         setInput("")
         // setTotal(recipes.length)
-
-
     }
+    
     
 
     return (
@@ -81,7 +80,7 @@ const Search = () => {
             {!loading && (
                 <div>
                     {/* <p>{total}</p> */}
-                    <p>{recipes.length} results found</p>
+                    <div>{recipes.length} results found</div>
                 <div className="inline-grid grid-cols-4 gap-x-10 gap-y-10 m-32 mt-8">
                     {recipes !== [] &&
                         recipes.map(recipe =>
