@@ -8,7 +8,7 @@ const Thumbnails = ({ img, name, category, cuisine }) => {
             <img className="" src={img} alt="" />
             
             <div className="items-center">
-            <div class="flex-1 items-end grid grid-cols-2 p-2 mx-2 divide-x divide-red-300 text-xs font-sans text-gray-500 border-b border-red-300 border-dotted">
+            <div className="flex-1 items-end grid grid-cols-2 p-2 mx-2 divide-x divide-red-300 text-xs font-sans text-gray-500 border-b border-red-300 border-dotted">
                 <p>{category}</p>
                 <p>{cuisine}</p>
                 </div>
