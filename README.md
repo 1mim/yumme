@@ -1,11 +1,48 @@
-About
+# Yumme
+Food Recipe Blog<br/>
+<a href="https://master.d3dxgryfakje1j.amplifyapp.com/" target="_blank" rel="noopener noreferrer"><strong>View Live Website</strong></a>
 
-Yumme is a food recipe blog created by 1mim for GA SEI 31 project 2. It fetches API from themealdb and styled using tailwindcss.
+# About
+<strong>Yumme</strong> is food recipe blog created using React. It utilises useState and useEffect to fetch food recipe data from <a href="https://www.themealdb.com/api.php"><strong>themealdb</strong></a> to display in the site. A search page allows visitors to search for available recipes in the API. It also features CSS done using <strong>Tailwind</strong>.
 
-Yumme is done using React. It mainly utilises the useState and useEffect hooks as well as passing down props with Route and Link.
+# Website Screenshots
+  <h4>Hompage</h4>
+  <img src="https://i.ibb.co/kMgv1gM/Screenshot-2021-10-28-at-8-02-57-PM.png" alt="homepage 1" border="0">
+  <img src="https://i.ibb.co/mF8CcYK/Screenshot-2021-10-28-at-8-03-05-PM.png" alt="homepage 2" border="0">
+  <img src="https://i.ibb.co/L68BJXY/Screenshot-2021-10-28-at-8-03-18-PM.png" alt="homepage 2" border="0">
+ 
+  <h4>Search Page</h4>
+  <img src="https://i.ibb.co/hM9fqPH/Screenshot-2021-10-28-at-8-03-54-PM.png" alt="search" border="0">
+ 
+  <h4>Categories Page</h4>
+  <img src="https://i.ibb.co/G0nbbQ2/Screenshot-2021-10-28-at-8-04-02-PM.png" alt="categories" border="0">
 
-It comprises of various components. The thumbnail/card is a single component used extensively across yumme to display the data fetched from the API. The recipe detail page is also a single component that gets data being passed down from the thumbnail/card.
+  <h4>Featured Recipes Page</h4>
+  <img src="https://i.ibb.co/pJLJzxH/Screenshot-2021-10-28-at-8-04-17-PM.png" alt="featured recipes page" border="0">
 
-The Search page allows visitors to search for available recipes in the API.
+# Dependencies Used
 
-The Latest and Featured pages displays data on page load w useEffect.
+<table>
+  <thead>
+    <tr>
+      <th><strong>Frontend</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>react-router-dom</td>
+    </tr>
+    <tr>
+      <td>react-spinners-css</td>
+    </tr>
+    <tr>
+      <td>craco</td>
+    </tr>
+    <tr>
+      <td>tailwindcss</td>
+    </tr>
+    <tr>
+      <td>postcss</td>
+    </tr>
+  </tbody>
+</table>
